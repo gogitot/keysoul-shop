@@ -1,5 +1,5 @@
 (function () {
-  emailjs.init("public_cl3jFq_E1Gew5d3j");
+  emailjs.init("public_clj3Fq_ElGewSJd3j");
 
   const form = document.getElementById('contact-form');
 form.addEventListener('submit', function (event) {
