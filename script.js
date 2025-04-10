@@ -6,6 +6,8 @@
     event.preventDefault();
     emailjs.sendForm('service_fbm7d8s', 'template_jzaceu8', this)
       .then(() => {
+        document.getElementById('contact-form').reset();
+        alert("Благодарим ти! Съобщението беше изпратено успешно.");
         document.getElementById('status-msg').textContent = "Съобщението е изпратено успешно!";
       }, (error) => {
         document.getElementById('status-msg').textContent = "Грешка при изпращане.";
