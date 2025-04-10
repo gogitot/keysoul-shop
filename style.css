@@ -38,3 +38,25 @@ header, footer {
   padding: 0.5em 1em;
   margin-top: 1em;
 }
+/* Успешно изпратено съобщение (зелен pop-up) */
+.popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 1000;
+}
+
+.popup.show {
+  opacity: 1;
+}
+
+/* Съобщение за грешка (червен pop-up) */
+.popup.error {
+  background-color: #f44336;
+}
