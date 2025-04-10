@@ -60,3 +60,26 @@ header, footer {
 .popup.error {
   background-color: #f44336;
 }
+.popup {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4CAF50;
+  color: white;
+  padding: 1em 2em;
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  z-index: 1000;
+}
+
+.popup.error {
+  background-color: #f44336;
+}
+
+.popup.show {
+  opacity: 1;
+  pointer-events: auto;
+}
