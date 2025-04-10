@@ -1,53 +1,37 @@
-
 <!DOCTYPE html>
-<html lang="bg">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>KeySoul</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Contact Form</title>
 </head>
 <body>
-  <header>
-    <h1>KeySoul</h1>
-    <p>Добре дошъл в KeySoul – твоето място за уникални механични клавиатури, switch-и и аксесоари.</p>
-  </header>
+  <h2>Contact Us</h2>
+  <form id="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required /><br/><br/>
+    <input type="email" name="email" placeholder="Your Email" required /><br/><br/>
+    <input type="text" name="title" placeholder="Subject" required /><br/><br/>
+    <textarea name="message" placeholder="Your Message" required></textarea><br/><br/>
+    <button type="submit">Send</button>
+  </form>
 
-  <main>
-    <section class="products">
-      <div class="product"><h3>Pudding Keycaps Set</h3><p>69.00 лв</p></div>
-      <div class="product"><h3>Silent Linear Switches (35 бр.)</h3><p>49.00 лв</p></div>
-      <div class="product"><h3>Custom USB-C Spiral Cable</h3><p>29.00 лв</p></div>
-    </section>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("clj3Fq_ElGewSJd3j"); // Public key
+    })();
 
-    <section class="cta">
-      <h2>Готов ли си да изградиш своята мечтана клавиатура?</h2>
-      <button onclick="document.getElementById('contact').scrollIntoView()">Разгледай каталога</button>
-    </section>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
 
-    <section id="contact" class="contact-form">
-      <h2>Свържи се с нас</h2>
-<form id="contact-form">
-  <input type="text" name="name" placeholder="Име" required>
-  <input type="email" name="email" placeholder="Имейл" required>
-  <textarea name="message" placeholder="Съобщение" required></textarea>
-  <button type="submit">Изпрати</button>
-</form>
-      <p id="status-msg"></p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 KeySoul. Всички права запазени.</p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script src="script.js"></script>
-  <div id="popup" class="popup">
-  Съобщението беше изпратено успешно!
-</div>
-<div id="popup-error" class="popup error">
-  Възникна грешка при изпращането. Моля, опитайте отново.
-</div>
+      emailjs.sendForm('service_fbm7d8s', 'template_jzaceu8', this)
+        .then(function(response) {
+          alert("Message sent successfully!");
+        }, function(error) {
+          console.log("FAILED...", error);
+          alert("Failed to send message. Check console for error.");
+        });
+    });
+  </script>
 </body>
 </html>
