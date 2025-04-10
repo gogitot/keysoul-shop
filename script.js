@@ -1,22 +1,15 @@
-(function () {
-  emailjs.init("public_clj3Fq_ElGewSJd3j");
-
-  const form = document.getElementById('contact-form');
-form.addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    const popup = document.getElementById('popup');
-    const popupError = document.getElementById('popup-error');
-
-    emailjs.sendForm('service_fbm7d8s', 'template_jzaceu8', form)
-      .then(() => {
-        this.reset();
-        popup.classList.add('show');
-        setTimeout(() => popup.classList.remove('show'), 4000);
-      })
-      .catch(() => {
-        popupError.classList.add('show');
-        setTimeout(() => popupError.classList.remove('show'), 4000);
-      });
-  });
+(function(){
+  emailjs.init("clj3Fq_ElGewSJd3j"); // Public key
 })();
+
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  emailjs.sendForm('service_fbm7d8s', 'template_jzaceu8', this)
+    .then(function(response) {
+      alert("Message sent successfully!");
+    }, function(error) {
+      console.log("FAILED...", error);
+      alert("Failed to send message. Check console for details.");
+    });
+});
