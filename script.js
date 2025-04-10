@@ -4,7 +4,7 @@
 
   document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
-    emailjs.sendForm('your_service_id', 'your_template_id', this)
+    emailjs.sendForm('service_fbm7d8s', 'template_jzaceu8', this)
       .then(() => {
         document.getElementById('status-msg').textContent = "Съобщението е изпратено успешно!";
       }, (error) => {
