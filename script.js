@@ -1,5 +1,5 @@
 (function () {
-  emailjs.init("cl3jFq_E1Gew5d3j");
+  emailjs.init("public_cl3jFq_E1Gew5d3j");
 
   document.getElementById('contact-form').addEventListener('submit', function (event) {
     event.preventDefault();
