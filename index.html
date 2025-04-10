@@ -1,12 +1,47 @@
+
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Keysoul</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/main.jsx"></script>
-  </body>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KeySoul</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>KeySoul</h1>
+    <p>Добре дошъл в KeySoul – твоето място за уникални механични клавиатури, switch-и и аксесоари.</p>
+  </header>
+
+  <main>
+    <section class="products">
+      <div class="product"><h3>Pudding Keycaps Set</h3><p>69.00 лв</p></div>
+      <div class="product"><h3>Silent Linear Switches (35 бр.)</h3><p>49.00 лв</p></div>
+      <div class="product"><h3>Custom USB-C Spiral Cable</h3><p>29.00 лв</p></div>
+    </section>
+
+    <section class="cta">
+      <h2>Готов ли си да изградиш своята мечтана клавиатура?</h2>
+      <button onclick="document.getElementById('contact').scrollIntoView()">Разгледай каталога</button>
+    </section>
+
+    <section id="contact" class="contact-form">
+      <h2>Свържи се с нас</h2>
+      <form id="contact-form">
+        <input type="text" name="user_name" placeholder="Име" required />
+        <input type="email" name="user_email" placeholder="Имейл" required />
+        <textarea name="message" placeholder="Съобщение" required></textarea>
+        <button type="submit">Изпрати</button>
+      </form>
+      <p id="status-msg"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 KeySoul. Всички права запазени.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>

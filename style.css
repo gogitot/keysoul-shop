@@ -1,25 +1,40 @@
+
 body {
-  font-family: Arial, sans-serif;
-  background: #1a1a1a;
-  color: #fff;
-  padding: 2rem;
-}
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-}
-input, textarea {
-  width: 100%;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-  border: none;
-  border-radius: 4px;
-}
-button {
-  padding: 0.75rem 1.5rem;
-  background: #4f46e5;
+  margin: 0;
+  font-family: sans-serif;
+  background: #0d0d0d;
   color: white;
+  text-align: center;
+}
+header, footer {
+  padding: 1em;
+  background-color: #111;
+}
+.products {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  padding: 2em;
+}
+.product {
+  background-color: #1a1a2e;
+  padding: 1em;
+  border-radius: 10px;
+  width: 200px;
+}
+.cta, .contact-form {
+  margin: 2em auto;
+  padding: 1em;
+}
+.contact-form input, .contact-form textarea {
+  display: block;
+  width: 80%;
+  margin: 0.5em auto;
+  padding: 0.5em;
+  border-radius: 5px;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
+}
+.contact-form button {
+  padding: 0.5em 1em;
+  margin-top: 1em;
 }
