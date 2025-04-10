@@ -8,6 +8,11 @@ form.addEventListener('submit', function (event) {
     const popup = document.getElementById('popup');
     const popupError = document.getElementById('popup-error');
 
+  const data = new FormData(form);
+for (let [key, value] of data.entries()) {
+  console.log(`${key}: ${value}`);
+}
+
     emailjs.sendForm('service_fbm7d8s', 'template_jzaceu8', form)
       .then(() => {
         this.reset();
