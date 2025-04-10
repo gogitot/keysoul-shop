@@ -1,16 +1,29 @@
+(function () {
+  emailjs.init("cl3jFq_E1Gew5d3j"); // Тук е твоят публичен ключ
 
-(function(){
-  emailjs.init("clj3Fq_ElGewSJd3j"); // Тук е твоят публичен ключ
-
-  document.getElementById('contact-form').addEventListener('submit', function(event) {
+  document.getElementById('contact-form').addEventListener('submit', function (event) {
     event.preventDefault();
+
     emailjs.sendForm('service_fbm7d8s', 'template_jzaceu8', this)
       .then(() => {
         document.getElementById('contact-form').reset();
-        alert("Благодарим ти! Съобщението беше изпратено успешно.");
-        document.getElementById('status-msg').textContent = "Съобщението е изпратено успешно!";
+        showPopup('Съобщението е изпратено успешно!');
       }, (error) => {
-        document.getElementById('status-msg').textContent = "Грешка при изпращане.";
+        showPopup('Грешка при изпращане.', true);
       });
   });
+
+  // 👉 Функция за показване на pop-up съобщения
+  function showPopup(message, isError = false) {
+    const popupId = isError ? 'popup-error' : 'popup';
+    const popup = document.getElementById(popupId);
+    if (!popup) return;
+
+    popup.textContent = message;
+    popup.classList.add('show');
+
+    setTimeout(() => {
+      popup.classList.remove('show');
+    }, 4000); // Скрии след 4 секунди
+  }
 })();
